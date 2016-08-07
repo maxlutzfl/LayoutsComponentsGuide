@@ -1,0 +1,96 @@
+html {
+	@include font-size($base-font-size);
+	font-family: $font-family;
+	color: $base-color;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	@include transition();
+
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
+ul {
+	font-size: 0;
+
+	li {
+		@include font-size($base-font-size);
+		vertical-align: top;
+	}
+}
+
+.inline-list {
+
+	li {
+		display: inline-block;
+	}
+}
+
+.page-container {
+	position: relative;
+	z-index: 10;
+	max-width: $container-width;
+	margin: 0 auto;
+	@include clearfix();
+}
+
+.section-padding {
+	padding: ($padding * 2) $padding;
+}
+
+.small-text {
+	@include font-size(12);
+}
+
+.spacing-between-elements {
+
+	> *:not(:last-child) {
+		margin-bottom: $padding;
+	}
+}
+
+.spacing-between-elements {
+	
+	> *:not(:last-child) {
+		margin-bottom: $padding;
+	}
+}
+
+.spacing-between-elements-small {
+	
+	> *:not(:last-child) {
+		margin-bottom: ($padding / 2);
+	}
+}
+
+.spacing-between-elements-horizontal {
+	
+	> *:not(:last-child) {
+		margin-right: $padding;
+	}
+}
+
+.spacing-between-elements-horizontal-small {
+	
+	> *:not(:last-child) {
+		margin-right: ($padding / 2);
+	}
+}
+
+.code-block {
+	width: 100%;
+	padding: 10px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	resize: vertical;
+	min-height: 150px;
+	font-family: monospace;
+	font-size: 16px;
+	line-height: 1.6;
+}

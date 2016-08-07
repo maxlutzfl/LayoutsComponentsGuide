@@ -1,0 +1,44 @@
+input[type="submit"],
+button,
+.button-style {
+    cursor: pointer;
+    appearance: none;
+    box-shadow: $button-box-shadow;
+    border-radius: $button-border-radius;
+    text-shadow: none;
+    display: table;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: $link-color;
+    color: #fff;
+    border: $button-border-width solid $link-color;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+
+    @extend .small-text;
+
+    @include transition();
+
+    @include breakpoint('above', 500px) {
+        padding: 15px 20px;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: $link-hover-color;
+        border-color: $link-hover-color;
+    }
+
+    &.button-style-hollow {
+        background-color: transparent;
+        color: $link-color;
+        border: $button-border-width solid $link-color;
+
+        &:hover {
+            background-color: $link-hover-color;
+            border-color: $link-hover-color;
+            color: #fff;
+        }
+    }
+}

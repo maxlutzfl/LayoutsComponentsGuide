@@ -1,0 +1,37 @@
+@mixin breakpoint($direction, $point1, $point2: null) {
+
+	@if $direction == 'above' {
+		@media (min-width: $point1) { @content; }
+
+	} @else if $direction == 'below' {
+		@media (max-width: $point1) { @content; }
+
+	} @else if $direction == 'between' {
+		@media (min-width: $point1) and (max-width: $point2) { @content; }
+	}
+}
+
+@mixin clearfix {
+	&:before, 
+	&:after { 
+		content: ""; 
+		display: table; 
+	}
+
+	&:after { 
+		clear: both; 
+	}
+}
+
+@function rem($pixels, $context: $base-font-size) {
+	@return ($pixels / $context) * 1rem;
+}
+
+@mixin font-size($pixels) {
+	font-size: $pixels + px;
+	font-size: rem($pixels);
+}
+
+@mixin transition() {
+	transition: 300ms ease;
+}
